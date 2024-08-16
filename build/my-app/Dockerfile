@@ -17,7 +17,7 @@ COPY . .
 RUN npm run build
 
 # Use an Nginx image to serve the built files
-FROM nginx:alpine
+FROM nginx:1-alpine-slim
 
 # Copy the built React files from the previous stage
 COPY --from=0 /app/build /usr/share/nginx/html
