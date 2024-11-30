@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_REPO = 'dockerabhi98/dev'
+        DOCKER_REPO = 'dockerabhi98/prod'
         DOCKER_TAG = "${env.BRANCH_NAME}-${env.BUILD_NUMBER}"
     }
 
