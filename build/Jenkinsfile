@@ -7,7 +7,7 @@ pipeline {
     }
 
     triggers {
-        // No pollSCM trigger here; webhook will handle it
+        pollSCM('* * * * *') // Checks for changes every minute
     }
 
     stages {
