@@ -28,7 +28,7 @@ pipeline {
         stage('Lint') {
             steps {
                 script {
-                    echo "Running linting rules..."
+                    echo "Running linting rules.."
                 }
                 sh 'npm install'
                 sh 'npm run lint'
