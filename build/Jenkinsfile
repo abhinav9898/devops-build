@@ -15,8 +15,9 @@ pipeline {
             steps {
                 script {
                     echo "GIT_BRANCH: ${env.GIT_BRANCH}"
-                    echo "Branch Name: ${env.BRANCH_NAME}"
-                    if (env.BRANCH_NAME != 'develop') {
+                    def branchName = env.GIT_BRANCH?.replaceFirst(/^origin\//, '')
+                    echo "Branch Name: ${branchName}"
+                    if (branchName != 'develop') {
                         error("This pipeline only runs for the 'develop' branch.")
                     }
                 }
